@@ -2,7 +2,8 @@
 
 ## Data Cleaning:
 
- 1) Droped Car column, since it contains 99% of missing values.
+ 1) Dropped Car column, since it contains 99% of missing values.
+ 2) Then Dropped Rows with missing values.
  2) Removed "()" from passanger column, i.e. Kid(s) to Kids
  3) Changed type of Y column from Int64 to String for better plotting¶
  4) After cleaning, the final dataset has 12079 entries, 25 columns
