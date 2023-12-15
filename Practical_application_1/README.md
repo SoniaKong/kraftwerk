@@ -16,12 +16,12 @@
 
  1) Findings for Bar Coupons:
  - Overall coupon acceptance rate is lower than non-acceptance rate (41% vs 59%)
- - However, for those who went to Bar more than once a month, the acceptance rate is significantly higher (69% vs 31%), and with further analysis for those who went to bar more than 4 times a month , we found the more request they went, the higher the acceptance rate we can see.
+ - However, for those who went to Bar more than once a month, the acceptance rate is significantly higher (69% vs 31%), and with further analysis for those who went to bar more than 4 times a month, we found the more request they went, the higher the acceptance rate we can see.
  - Passenger with no Kids is another factor for a higher acceptance rate, which is reasonable because most of bars has age limitation
  - Drivers with age under 30 are more likely to accept coupon, i guess that is reasonable too because bars are more attractive to young people.
  - In summary, drivers who went to bar more than once a month, no kids passenger, age under 30 are more likely to accept the bar coupons.
 
- 2) Findings for Restaurant(<20) coupon:
+ 2) Findings for Restaurant(<20) coupons:
  - Overall coupon acceptance rate is higher than non-acceptance rate (71% vs 29%), which is not like the bar coupons, and we can see a potential business opportunity already.
  - After breakdown, we can see drivers who went to cheap restaurant more than once and age under 25 have even higher acceptance rate (76%)
  - If we only look at longer-term coupon (except the 2h immediate coupon), we found the acceptance rate is super high (84% vs 16%)
