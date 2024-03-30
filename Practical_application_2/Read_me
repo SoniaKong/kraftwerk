@@ -1,1 +1,15 @@
+What drives the price of a car?
 
+Summary:
+1) Data Exploration: The dataset has 426880 entries and 18 columns, except ID and price, the only numerical column is odometer. There are also lots of NAs in some columns. 
+2) Data Preparation: Drop rows with NAa, drop two columns id, VIN which did not carry too much information. Removed outliers. One-hot coded all the categorical columns. 
+3) Modeling: Split data into 80:20 for training and testing. Create pipeline with polynomical and ridge regression to fit the model. Check MSE_train and MSE_test. 
+4) Evaluation: Plot the predition vs actuals to see the performance of model. 
+5) Feature explanation: Use shapley plot to explain the features's conbirtion to the prediction. 
+6) Findings (ordered the features from most important to least important):
+   Year: the newer the higher the price (i.e. car built in year_2020 is much higher than built in year_2008)
+   Cylinders: the more the higher the price (i.e car with Cylingders = 8 is much higher than Cylinders = 4)
+   Type: truck > Sedan > SUV 
+   odometer: the smaller the higher the price
+   Condition: excellent with a higer price
+   
