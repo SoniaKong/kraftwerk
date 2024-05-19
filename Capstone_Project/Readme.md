@@ -8,33 +8,27 @@ KNN - LOGISTICRegression - DecisionTree - SVM
 
 ## Data Cleaning:
 
- 1) Dropped Car column, since it contains 99% of missing values.
- 2) Then Dropped Rows with missing values.
- 2) Removed "()" from passanger column, i.e. Kid(s) to Kids
- 3) Changed type of Y column from Int64 to String for better plotting¶
- 4) After cleaning, the final dataset has 12079 entries, 25 columns
+ 1) Dropped Na rows with missing values.
+ 2) Standscaled all numerical columns.
+ 3) Onehotencoded 3 categorical columns: 'VisitorType','Weekend','Month'
+ 4) Take 'Revenue' as the target column and changed Yes/No to 1/0 with mapping function
+ 5) After cleaning, the final dataset has 12330 rows × 29 columns and then split it into 80:20 for holdout validation
 
-## Code and Visualization:
+## Modeling and Evaluation:
 
- 1) Used Pandas value_counts spot-check the distribution of specific column
- 2) Used Seaborn countplot and pie chart to visualize the difference of acceptance rate for different segmentation to identify the common characteristics of potential likely-hood group.
+ 1) Used KNN/LOGISTICRegression/DecisionTree/SVM train the model
+ 2) Evaluate the metrics: Trian_score, Test_score, F1_score, Fitting time
+ 3) Plotted confustion matrix based on test data
+ 4) Plotted ROC based on test data
+ 5) Plotted Precison/Recall vs Threshold on test data
+ 6) Used Shap analysis to explain the linear indicator for Logistic Regression model
 
 ## Summary of Findings:
 
- 1) Findings for Bar Coupons:
- - Overall coupon acceptance rate is lower than non-acceptance rate (41% vs 59%)
- - However, for those who went to Bar more than once a month, the acceptance rate is significantly higher (69% vs 31%), and with further analysis for those who went to bar more than 4 times a month, we found the more request they went, the higher the acceptance rate we can see.
- - Passenger with no Kids is another factor for a higher acceptance rate, which is reasonable because most of bars has age limitation
- - Drivers with age under 30 are more likely to accept coupon, i guess that is reasonable too because bars are more attractive to young people.
- - In summary, drivers who went to bar more than once a month, no kids passenger, age under 30 are more likely to accept the bar coupons.
-
- 2) Findings for Restaurant(<20) coupons:
- - Overall coupon acceptance rate is higher than non-acceptance rate (71% vs 29%), which is not like the bar coupons, and we can see a potential business opportunity already.
- - After breakdown, we can see drivers who went to cheap restaurant more than once and age under 25 have even higher acceptance rate (76%)
- - If we only look at longer-term coupon (except the 2h immediate coupon), we found the acceptance rate is super high (84% vs 16%)
- - In summary, overall drivers are already easy to accept cheap restaurant coupons and those who went to cheap restaurant once a month, age under 25 are even more likely to accept coupon, especially the longer-term coupon.
+ 1) SVM model is performing better than KNN, Decision Tree or Logistic Regression with best F1 score.
+ 2) From the shap analysis, we can see some positive indicators, such as the more the pagevalues, the longer the product related duration, the more the likely customer convert, which makes sense since stronger engagement shows the intention. 
+ 3) Also from shap analytis, we can see some negative indicatiors, such as the more exit or bounce rate, the less likely to convert, which apprarently shows less interest.
 
 ## Next Step and Recommendations:
-- Distribute Cheap restaurant coupons for general targeting. For 2h expiration immediate coupons (maybe a deeper discount than 1d/2d expiration coupons), distribute them only during the non-mealtime to increase the traffic.
-- Distribute Bar coupons for precise targeting (who went to bar at least once a month, age under 30 and no kids onboard).
-- If possible, do a break-even analysis to see if the discount loss could be compensated by the increase of traffic.
+ 1) If we can figure out way to improve the page to be more attrative, customers could spend more time on the pages then ultimately improve the conversion rate. 
+ 2) Also if we can use this model to only target high propensity customers with customerized email messages, the conversion rate could be improved accordingly as well. 
