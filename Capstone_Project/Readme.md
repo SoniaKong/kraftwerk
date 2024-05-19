@@ -1,13 +1,10 @@
 ## Project Name: Customer Purchase Propensity
 
-# Task: Using Multiple Classification methods to idenfity high propensity customers
-# Goal: The goal of this project is to identify more effective ways for people who are likely to subsribe to our product and compare their performances to identify the best model.
-# Techniques Expected to Use: Data cleaning, preprocessing, column transformations, feature selections, classifier selections, performation evaluation and comparion with following 4 methods:
-KNN
-LOGISTICRegression
-DecisionTree
-SVM
-# Data: Online Shoppers Purchasing Intention Dataset Link: https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset Of the 12,330 sessions in the dataset, 84.5% (10,422) were negative class samples that did not end with shopping, and the rest (1908) were positive class samples ending with shopping.
+Task: Using Multiple Classification methods to idenfity high propensity customers
+Goal: The goal of this project is to identify more effective ways for people who are likely to subsribe to our product and compare their performances to identify the best model.
+Techniques Expected to Use: Data cleaning, preprocessing, column transformations, feature selections, classifier selections, performation evaluation and comparion with following 4 methods:
+KNN - LOGISTICRegression - DecisionTree - SVM
+Data: Online Shoppers Purchasing Intention Dataset Link: https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset Of the 12,330 sessions in the dataset, 84.5% (10,422) were negative class samples that did not end with shopping, and the rest (1908) were positive class samples ending with shopping.
 
 ## Data Cleaning:
 
