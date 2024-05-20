@@ -21,10 +21,20 @@ KNN - LOGISTICRegression - DecisionTree - SVM
  3) Plotted confustion matrix based on test data
  4) Plotted ROC based on test data
  5) Plotted Precison/Recall vs Threshold on test data
- 6) Model Compariosn:
-    
-    
- 8) Used Shap analysis to explain the linear indicator for Logistic Regression model
+ 6) Used feature_permutation selected top features for SVM model.
+    <img width="1131" alt="Screenshot 2024-05-19 at 8 00 56 PM" src="https://github.com/SoniaKong/kraftwerk/assets/26859063/8b78d777-f94f-4503-a566-c0e08d2c9b3d">
+    The values at the top of the table are the most important features in our model, while those at the 
+    bottom matter least. The first number in each row indicates how much model performance decreased with random shuffling, using the same performance metric as the 
+    model (in this case, accuracy score). The number after the ± measures how performance varied from one-reshuffling to the next, i.e., degree of randomness across 
+    multiple shuffles. Negative values for permutation importance indicate that the predictions on the shuffled (or noisy) data are more accurate than the real data. 
+    This means that the feature does not contribute much to predictions (importance close to 0), but random chance caused the predictions on shuffled data to be more 
+    accurate. This is more common with small datasets. In our example, the top 3 features are PageValues, Administrative, Informational while the 2 least significant 
+    are month, VisitorType.
+ 7) Used GridSearchCV look for best parameters for SVM model.
+ 8) Model Compariosn:
+    <img width="725" alt="Screenshot 2024-05-19 at 7 55 38 PM" src="https://github.com/SoniaKong/kraftwerk/assets/26859063/cf50381e-c0cb-4c88-a25f-7c8ff4ac7f26">
+ 9) Used Shap analysis to explain the linear indicator for Logistic Regression model:
+     <img width="726" alt="Screenshot 2024-05-19 at 8 04 35 PM" src="https://github.com/SoniaKong/kraftwerk/assets/26859063/71f4878c-af79-4bf7-b517-865248f0c9bd">
 
 ## Summary of Findings:
 
