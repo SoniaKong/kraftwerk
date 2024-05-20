@@ -21,7 +21,7 @@ KNN - LOGISTICRegression - DecisionTree - SVM
  3) Plotted confustion matrix based on test data
  4) Plotted ROC based on test data
  5) Plotted Precison/Recall vs Threshold on test data
- 6) Used feature_permutation selected top features for SVM model.
+ 6) Used feature_permutation selected top features for SVM model, PageValues is the top 1 feature. 
     <img width="1131" alt="Screenshot 2024-05-19 at 8 00 56 PM" src="https://github.com/SoniaKong/kraftwerk/assets/26859063/8b78d777-f94f-4503-a566-c0e08d2c9b3d">
     The values at the top of the table are the most important features in our model, while those at the 
     bottom matter least. The first number in each row indicates how much model performance decreased with random shuffling, using the same performance metric as the 
@@ -30,18 +30,18 @@ KNN - LOGISTICRegression - DecisionTree - SVM
     This means that the feature does not contribute much to predictions (importance close to 0), but random chance caused the predictions on shuffled data to be more 
     accurate. This is more common with small datasets. In our example, the top 3 features are PageValues, Administrative, Informational while the 2 least significant 
     are month, VisitorType.
- 7) Used GridSearchCV look for best parameters for SVM model.
+ 7) Used GridSearchCV look for best parameters for SVM model. Best Parameters are: C = 0.9, degree = 1, gamma = 'scale'
  8) Model Compariosn:
     <img width="725" alt="Screenshot 2024-05-19 at 7 55 38 PM" src="https://github.com/SoniaKong/kraftwerk/assets/26859063/cf50381e-c0cb-4c88-a25f-7c8ff4ac7f26">
+    SVM model is performing better than KNN, Decision Tree or Logistic Regression with best F1 score
  9) Used Shap analysis to explain the linear indicator for Logistic Regression model:
      <img width="726" alt="Screenshot 2024-05-19 at 8 04 35 PM" src="https://github.com/SoniaKong/kraftwerk/assets/26859063/71f4878c-af79-4bf7-b517-865248f0c9bd">
-
-## Summary of Findings:
-
- 1) SVM model is performing better than KNN, Decision Tree or Logistic Regression with best F1 score.
- 2) From the shap analysis, we can see some positive indicators, such as the more the pagevalues, the longer the product related duration, the more the likely customer convert, which makes sense since stronger engagement shows the intention. 
- 3) Also from shap analytis, we can see some negative indicatiors, such as the more exit or bounce rate, the less likely to convert, which apprarently shows less interest.
+     We can see some positive indicators, such as the more the pagevalues, the longer the product related duration, the more the likely customer convert, which makes 
+     sense since stronger engagement shows the intention. Also we can see some negative indicatiors, such as the more exit or bounce rate, the less likely to convert, 
+      which apprarently shows less interest.
 
 ## Next Step and Recommendations:
- 1) If we can figure out way to improve the page to be more attrative, customers could spend more time on the pages then ultimately improve the conversion rate. 
- 2) Also if we can use this model to only target high propensity customers with customerized email messages, the conversion rate could be improved accordingly as well. 
+ 1) With the model, we can select the appropriate threshold to target high propensity customers (i.e recall = 0.6), all the TP + NP will be our targeting audience, with is 15% - 20% of total audience. 
+ 2) If we can figure out way to improve the page content to be more attrative, customers could spend more time on the pages then ultimately improve the conversion rate. 
+ 3) Also if we can use this model to only target high propensity customers with customerized email/paid media messages, the conversion rate could be improved 
+   accordingly as well. 
