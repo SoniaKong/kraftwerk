@@ -17,11 +17,14 @@ KNN - LOGISTICRegression - DecisionTree - SVM
 ## Modeling and Evaluation:
 
  1) Used KNN/LOGISTICRegression/DecisionTree/SVM train the model
- 2) Evaluate the metrics: Trian_score, Test_score, F1_score, Fitting time
+ 2) Evaluate the metrics: Trian_score, Test_score, Preciosn, Recall, F1_score, Fitting time
  3) Plotted confustion matrix based on test data
  4) Plotted ROC based on test data
  5) Plotted Precison/Recall vs Threshold on test data
- 6) Used Shap analysis to explain the linear indicator for Logistic Regression model
+ 6) Model Compariosn:
+    
+    
+ 8) Used Shap analysis to explain the linear indicator for Logistic Regression model
 
 ## Summary of Findings:
 
